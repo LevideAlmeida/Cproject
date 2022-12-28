@@ -1,6 +1,7 @@
 # Comentario
 print("Euzao")
 """
-ele interpreta mesmo?
-print(123)
+Comentarios maiores
+cuidado pq parece o o python interpreta essa linha, não sei como, mas beleza
+
 """
