@@ -1,7 +1,7 @@
 # Exercises
 # increase prices of products to follow in ten percent
 # Generate new_products by deep copy
-separator = "-------------------------------------"
+separator = "------------------------------------"
 
 import copy
 
