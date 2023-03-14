@@ -1,0 +1,24 @@
+{
+  "name": "Levi",
+  "surname": "Almeida",
+  "adresses": [
+    {
+      "street": 422,
+      "house": 129
+    },
+    {
+      "street": 224,
+      "house": 921
+    }
+  ],
+  "height": 1.7,
+  "preferred_numbers": [
+    2,
+    5,
+    10,
+    24,
+    69
+  ],
+  "dev": true,
+  "None": null
+}
