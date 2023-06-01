@@ -1,44 +1,46 @@
-# Calculo do primeiro dígito do CPF
-import re
+"""
+code to validate CPF
 
-CPF = input("Digite o CPF: ")
+"""
 
-cpf_enviado_usuario = re.sub(r'[^0-9]', '', CPF)
+# Calculation of the tenth digit of the CPF
+# import sys
 
-cpf_e_sequencial = CPF == CPF[0] * len(CPF)
+CPF = input("Insert CPF: ")
 
-if cpf_e_sequencial:
-    print("CPF invalido por repetição!!!")
-    exit()
+# if_cpf_is_sequential = CPF == CPF[0] * len(CPF)
+# if if_cpf_is_sequential:
+# print("CPF invalidated by repetition!!!")
+# sys.exit(1)
 
-nove_digitos = cpf_enviado_usuario[0:9]
-multiplicador_regressivo = 10
-soma = 0
+first_nine_digits = CPF[0:9]
+regressive_multiplier: int = 10
+sum_tenth_digit: int = 0
 
-for numero in nove_digitos:
-    soma += int(numero) * multiplicador_regressivo
-    multiplicador_regressivo -= 1
+for digit in first_nine_digits:
+    sum_tenth_digit += int(digit) * regressive_multiplier
+    regressive_multiplier -= 1
 
-primeiro_digito = (soma * 10) % 11
-primeiro_digito = primeiro_digito if primeiro_digito <= 9 else 0
+tenth_digit = (sum_tenth_digit * 10) % 11
+tenth_digit = tenth_digit if tenth_digit <= 9 else 0
 
-# Calculo do segundo dígito do CPF
+# Calculation of the last digit of the CPF
 
-dez_digitos = nove_digitos + str(primeiro_digito)
-multiplicador_regressivo = 11
-soma = 0
+first_ten_digits = first_nine_digits + str(tenth_digit)
+regressive_multiplier: int = 11
+sum_last_digit: int = 0
 
-for digito in dez_digitos:
-    soma += int(digito) * multiplicador_regressivo
-    multiplicador_regressivo -= 1
+for digit in first_ten_digits:
+    sum_last_digit += int(digit) * regressive_multiplier
+    regressive_multiplier -= 1
 
-segundo_digito = (soma * 10) % 11
-segundo_digito = segundo_digito if segundo_digito <= 9 else 0
+last_digit = (sum_last_digit * 10) % 11
+last_digit = last_digit if last_digit <= 9 else 0
 
-cpf_gerado_pelo_calculo = f'{nove_digitos}{primeiro_digito}{segundo_digito}'
+cpf_generated_by__program = f'{first_nine_digits}{tenth_digit}{last_digit}'
 
-if cpf_enviado_usuario == cpf_gerado_pelo_calculo:
-    print(f'{CPF} é valido')
+if CPF == cpf_generated_by__program:
+    print(f'{CPF} its valid')
 
 else:
-    print("CPF invalido!!!")
+    print("CPF invalid!!!")
